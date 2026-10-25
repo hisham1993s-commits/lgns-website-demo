@@ -3,12 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="London Grill N Shake, Kumbakonam: menu and table booking.">
+<meta name="description" content="London Grill N Shake, Kumbakonam: menu, Google reviews and table booking.">
 <title>London Grill N Shake</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kaushan+Script&family=Poppins:wght@400;500;600;700;800&family=Arima:wght@600;700&display=swap">
 <style>
+  @font-face { font-family: "Amiri"; src: url("fonts/Amiri-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+  @font-face { font-family: "Amiri"; src: url("fonts/Amiri-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+  @font-face { font-family: "TAB Tamil"; src: url("fonts/TABUni-Tamil032.ttf") format("truetype"); font-display: swap; }
   /* Layout: a warm, dark grill-house page lit by the logo's flame; each menu category wears its printed-menu colour */
   :root {
     color-scheme: dark;
@@ -29,7 +32,8 @@
     --display: "Bebas Neue", "Oswald", Impact, sans-serif;
     --script: "Kaushan Script", "Brush Script MT", cursive;
     --body: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
-    --tamil: "Arima", "Noto Sans Tamil", sans-serif;
+    --tamil: "TAB Tamil", "Arima", "Noto Sans Tamil", sans-serif;
+    --desc: "Amiri", Georgia, "Times New Roman", serif;   /* the designer's own installed face, for dish and story copy */
     --gutter-l: max(20px, env(safe-area-inset-left, 0px));
     --gutter-r: max(20px, env(safe-area-inset-right, 0px));
   }
@@ -95,7 +99,7 @@
   .hero h1 .line:nth-child(3) span { animation-delay: .16s; }
   .hero h1 .fire { background: var(--flame); -webkit-background-clip: text; background-clip: text; color: var(--orange); -webkit-text-fill-color: transparent; }
   .hero .tagline { font-family: var(--script); font-size: clamp(26px, 3vw, 36px); color: var(--gold); margin: 18px 0 10px; }
-  .hero p.lead { color: var(--muted); max-width: 48ch; margin: 0 0 30px; font-size: 17px; }
+  .hero p.lead { color: var(--muted); max-width: 48ch; margin: 0 0 30px; font-family: var(--desc); font-size: clamp(18px, 1.6vw, 21px); line-height: 1.6; }
   .hero .tamil { font-family: var(--tamil); color: var(--amber); font-size: 20px; margin: 0 0 6px; }
   .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
   @keyframes rise { from { transform: translateY(105%); } to { transform: none; } }
@@ -132,7 +136,7 @@
   .about-photo .badge b { display: block; font-family: var(--display); font-weight: 400; font-size: 44px; line-height: 1; color: var(--gold); }
   .about-copy { min-width: 0; }
   .about-copy h2 { font-family: var(--display); font-weight: 400; font-size: clamp(44px, 5.5vw, 72px); line-height: .95; margin: 10px 0 18px; }
-  .about-copy p { color: var(--muted); max-width: 52ch; }
+  .about-copy p { color: var(--muted); max-width: 52ch; font-family: var(--desc); font-size: clamp(18px, 1.5vw, 20px); line-height: 1.65; }
   .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 30px; }
   .stat { background: var(--card); border-radius: 20px; padding: 18px; border: 1px solid var(--line); }
   .stat b { display: block; font-family: var(--display); font-weight: 400; font-size: 46px; line-height: 1; background: var(--flame); -webkit-background-clip: text; background-clip: text; color: var(--orange); -webkit-text-fill-color: transparent; font-variant-numeric: tabular-nums; }
@@ -174,7 +178,7 @@
   .item .meta { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
   .star { font-size: 11px; font-weight: 700; color: #1a0f08; background: var(--gold); padding: 2px 8px; border-radius: 999px; }
   .item h4 { margin: 0; font-size: 16px; font-weight: 600; line-height: 1.3; }
-  .item .desc { font-size: 13px; color: var(--muted); margin: 6px 0 0; line-height: 1.5; }
+  .item .desc { font-family: var(--desc); font-size: 16px; color: var(--muted); margin: 6px 0 0; line-height: 1.45; }
   .item .price { margin-top: 10px; font-weight: 800; font-size: 18px; color: var(--gold); font-variant-numeric: tabular-nums; }
   .opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
   .opt { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 9px; border: 1px solid rgba(255, 200, 61, .5); }
@@ -203,7 +207,7 @@
   .dish-info { padding: 34px 32px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
   .dish-info .cat { font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; opacity: .8; }
   .dish-info h3 { font-family: var(--display); font-weight: 400; font-size: clamp(38px, 5vw, 56px); line-height: .95; letter-spacing: .01em; }
-  .dish-info .d { margin: 0; opacity: .9; line-height: 1.6; }
+  .dish-info .d { margin: 0; opacity: .92; line-height: 1.55; font-family: var(--desc); font-size: clamp(19px, 2vw, 22px); }
   .dish-info .big-price { font-family: var(--display); font-size: 54px; line-height: 1; color: var(--dish-accent, var(--gold)); font-variant-numeric: tabular-nums; }
   .dish-info .opts .opt { font-size: 14px; padding: 6px 12px; border-color: currentColor; }
   .dish-info .opts .opt b { color: var(--dish-accent, var(--gold)); }
@@ -281,6 +285,38 @@
   footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
   .mobile-book { display: none; }
 
+
+  /* ---------- reviews ---------- */
+  .rev-top { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+  .rev-score { display: flex; align-items: baseline; gap: 10px; }
+  .rev-score b { font-family: var(--display); font-weight: 400; font-size: 84px; line-height: .9; color: var(--gold); font-variant-numeric: tabular-nums; }
+  .rev-score span { color: var(--muted); font-size: 14px; }
+  .rev-stars { font-size: 24px; letter-spacing: 3px; color: var(--gold); }
+  .rev-row { display: flex; gap: 20px; overflow-x: auto; padding: 4px 2px 14px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .rev-card { flex: 0 0 min(400px, 82vw); scroll-snap-align: start; border-radius: 28px; overflow: hidden; box-shadow: 0 24px 50px rgba(0, 0, 0, .45); transition: transform .4s cubic-bezier(.2,.8,.2,1); }
+  .rev-card:hover { transform: translateY(-6px) rotate(-.6deg); }
+  .rev-card img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .rev-note { font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+  /* ---------- instagram ---------- */
+  .ig-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: 12px; }
+  .ig-grid a { position: relative; display: block; border-radius: 22px; overflow: hidden; aspect-ratio: 4 / 5; }
+  .ig-grid a:first-child { grid-row: span 2; grid-column: span 2; aspect-ratio: auto; }
+  .ig-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.8,.2,1), filter .4s; }
+  .ig-grid a:hover img { transform: scale(1.06); filter: brightness(.75); }
+  .ig-grid a::after { content: "View on Instagram ↗"; position: absolute; left: 14px; bottom: 14px; font-size: 13px; font-weight: 700; background: rgba(21, 16, 13, .8); border-radius: 999px; padding: 6px 12px; opacity: 0; transform: translateY(8px); transition: .3s; }
+  .ig-grid a:hover::after { opacity: 1; transform: none; }
+  .ig-handle { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px; transition: border-color .2s; }
+  .ig-handle:hover { border-color: var(--amber); }
+  @media (max-width: 760px) { .ig-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  /* ---------- credits ---------- */
+  .credits-list { margin: 0; padding: 0; list-style: none; columns: 2 280px; column-gap: 28px; font-size: 13px; color: var(--muted); }
+  .credits-list li { break-inside: avoid; padding: 5px 0; border-bottom: 1px solid var(--line); }
+  .credits-list b { color: var(--ink); font-weight: 600; }
+  .credits-list a { color: var(--amber); }
+  .linkbtn { background: none; border: 0; padding: 0; color: var(--amber); text-decoration: underline; font-size: inherit; }
+
   /* scroll reveal: content is visible at rest; it only glides into place */
   .reveal { transition: transform .9s cubic-bezier(.2,.8,.2,1); }
   .reveal.pre { transform: translateY(36px); }
@@ -323,7 +359,7 @@
   <div class="wrap">
     <a class="brand" href="#home" aria-label="London Grill N Shake home"><span>GRILL</span><img src="img/logo-n.png" alt="N"><span>SHAKE<small>LONDON</small></span></a>
     <nav class="nav" aria-label="Main">
-      <a href="#menu">Menu</a><a href="#specials">Specials</a><a href="#about">Our story</a><a href="#visit">Visit</a>
+      <a href="#menu">Menu</a><a href="#specials">Specials</a><a href="#reviews">Reviews</a><a href="#about">Our story</a><a href="#visit">Visit</a>
     </nav>
     <a class="btn btn-fire" href="#book">Book a table</a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span></button>
@@ -332,7 +368,7 @@
 <div class="drawer" id="drawer" hidden>
   <div class="drawer-panel" role="dialog" aria-label="Site menu">
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
-    <a href="#menu">Menu</a><a href="#specials">Specials</a><a href="#about">Our story</a><a href="#book">Book a table</a><a href="#visit">Visit</a>
+    <a href="#menu">Menu</a><a href="#specials">Specials</a><a href="#reviews">Reviews</a><a href="#instagram">Instagram</a><a href="#about">Our story</a><a href="#book">Book a table</a><a href="#visit">Visit</a>
   </div>
 </div>
 
@@ -373,7 +409,7 @@
   <section class="sec about" id="about">
     <div class="wrap">
       <div class="about-photo reveal" id="aboutPhoto">
-        <img src="img/fried-rice.jpg" alt="A plate of fried rice from the kitchen">
+        <img src="img/insta/post-7.jpg" alt="London Grill N Shake restaurant front in Kumbakonam" style="object-position:50% 30%">
         <div class="badge"><b>23 years</b><span>Mayiladuthurai · London · Chennai · Kumbakonam</span></div>
       </div>
       <div class="about-copy reveal">
@@ -431,6 +467,39 @@
           <div class="times"><span>Shawarma & BBQ · 6 PM – 11 PM</span><span>Ramen & Sizzlers · 6 PM – 10:30 PM</span></div>
         </div>
         <div class="nights-img"><img src="img/grill-chicken.jpg" alt="Charcoal grilled chicken"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="reviews" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">Google reviews</span><h2>What our guests say</h2></div>
+        <div class="rev-top"><div class="rev-score"><b>4.1</b><div><div class="rev-stars" aria-label="4.1 out of 5 stars">★★★★☆</div><span>from 1,125 Google reviews</span></div></div></div>
+      </div>
+      <div class="rev-row" id="revRow">
+        <div class="rev-card"><img src="img/reviews/review-1.jpg" alt="5-star Google review by Bablu M.: Some places serve food, but this place serves an experience." loading="lazy"></div>
+        <div class="rev-card"><img src="img/reviews/review-2.jpg" alt="5-star Google review by Amith B.: Great food and dining experience, cosy dining booths." loading="lazy"></div>
+        <div class="rev-card"><img src="img/reviews/review-3.jpg" alt="5-star Google review by Rehana K.: The grilled fish was absolutely delicious." loading="lazy"></div>
+        <div class="rev-card"><img src="img/reviews/review-4.jpg" alt="5-star Google review by Mujubur R.: Wonderful atmosphere, neat and clean, value for money." loading="lazy"></div>
+      </div>
+      <p class="rev-note">Real reviews from Google Maps. <a href="https://www.google.com/maps/place/London+Grill+N+Shake/@10.9622386,79.3782157,17z/data=!4m8!3m7!1s0x3baacde321e93ddb:0xfb9c84dc752df0fb!8m2!3d10.9622386!4d79.3782157!9m1!1b1" target="_blank" rel="noopener" style="color:var(--amber)">Read all reviews on Google ↗</a></p>
+    </div>
+  </section>
+
+  <section class="sec" id="instagram" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><span class="eyebrow">From our Instagram</span><h2>Inside Grill N Shake</h2></div>
+        <a class="ig-handle" href="https://www.instagram.com/grillnshake_kumbakonam/" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@grillnshake_kumbakonam</a>
+      </div>
+      <div class="ig-grid">
+        <a href="https://www.instagram.com/grillnshake_kumbakonam/" target="_blank" rel="noopener"><img src="img/insta/post-1.jpg" alt="Signature biryani, grilled chicken and dessert inside the restaurant" loading="lazy"></a>
+        <a href="https://www.instagram.com/grillnshake_kumbakonam/" target="_blank" rel="noopener"><img src="img/insta/post-2.jpg" alt="Chicken biryani in lantern light" loading="lazy"></a>
+        <a href="https://www.instagram.com/grillnshake_kumbakonam/" target="_blank" rel="noopener"><img src="img/insta/post-4.jpg" alt="A couple sharing biryani at Grill N Shake" loading="lazy"></a>
+        <a href="https://www.instagram.com/grillnshake_kumbakonam/" target="_blank" rel="noopener"><img src="img/insta/post-3.jpg" alt="Butter naan, curry and tandoori" loading="lazy"></a>
+        <a href="https://www.instagram.com/grillnshake_kumbakonam/" target="_blank" rel="noopener"><img src="img/insta/post-5.jpg" alt="Spicy Thai chicken, Thai mint noodles and chicken 65 biryani" loading="lazy"></a>
+        <a href="https://www.instagram.com/grillnshake_kumbakonam/" target="_blank" rel="noopener"><img src="img/insta/post-6.jpg" alt="Biryani, kebab platter and dessert on the table" loading="lazy"></a>
       </div>
     </div>
   </section>
@@ -493,7 +562,7 @@
 <footer>
   <div class="wrap">
     <span>© London Grill N Shake · Estd 2001 · Kumbakonam</span>
-    <span>Website design by Hisham</span>
+    <span>Website design by Hisham · <button class="linkbtn" id="creditsBtn" type="button">Photo credits</button></span>
   </div>
 </footer>
 
@@ -503,8 +572,19 @@
 </div>
 
 <div class="modal" id="modal" hidden></div>
+<div class="modal" id="credits" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Photo credits" style="grid-template-columns:1fr;max-width:980px">
+    <button class="close-x" id="creditsClose" aria-label="Close">✕</button>
+    <div class="dish-info" style="padding:34px">
+      <h3>Photo credits</h3>
+      <p class="d" style="font-size:17px">Restaurant, Instagram and some dish photos are London Grill N Shake's own. Other dish photos come from Wikimedia Commons under free licences, credited below.</p>
+      <ul class="credits-list" id="creditsList"></ul>
+    </div>
+  </div>
+</div>
 
 <script src="menu-data.js"></script>
+<script src="dish-photos.js"></script>
 <script>
 (() => {
   const IMG = n => `img/${n}.jpg`;
@@ -520,6 +600,7 @@
     [/al faham|bbq .*chicken|peri-peri chicken$|grill chicken|lebanese/i, "grill-chicken"], [/paneer tikka|mushroom tikka|malai paneer/i, "paneer-tikka"],
     [/tikka|kebab|malai mutton/i, "chicken-skewers"],
   ];
+  const DP = typeof DISH_PHOTOS === "object" ? DISH_PHOTOS : {};
   const photoFor = (name, sec, cat) => {
     if (["soups", "gravy", "starters"].includes(cat.id)) return sec.img;
     for (const [re, img] of RULES) if (re.test(name)) return img;
@@ -533,7 +614,8 @@
   const ALL = [];
   CATEGORIES.forEach(cat => cat.sections.forEach(sec => sec.items.forEach(it => {
     const [name, price, desc, type = sec.type, flag] = it;
-    ALL.push({ id: ALL.length, cat, sec, name, price, desc, type, star: !!flag, img: photoFor(name, sec, cat) });
+    const own = DP[cat.id + "|" + name];
+    ALL.push({ id: ALL.length, cat, sec, name, price, desc, type, star: !!flag, img: own ? own.src : IMG(photoFor(name, sec, cat)) });
   })));
 
   // ---------- header drawer ----------
@@ -573,7 +655,7 @@
     return `<button class="item" data-i="${it.id}" aria-label="${esc(it.name)}, open dish">
       <div style="min-width:0"><div class="meta"><span class="vmark ${it.type}"></span>${it.star ? '<span class="star">★ Chef\'s special</span>' : ""}</div>
       <h4>${esc(it.name)}</h4><p class="desc">${esc(it.desc)}</p>${price}</div>
-      <div class="ph"><img src="${IMG(it.img)}" alt="" loading="lazy"></div><span class="tap">Tap to see</span></button>`;
+      <div class="ph"><img src="${it.img}" alt="" loading="lazy"></div><span class="tap">Tap to see</span></button>`;
   };
   function render() {
     const term = q.value.trim().toLowerCase();
@@ -602,7 +684,7 @@
   const specials = ALL.filter(it => it.star).slice(0, 12);
   document.getElementById("specialsRow").innerHTML = specials.map(it => {
     const p = parsePrice(it.price), from = Array.isArray(p) ? `from ${rupee(p[0][1])}` : rupee(p);
-    return `<button class="sp-card" data-i="${it.id}"><img src="${IMG(it.img)}" alt="" loading="lazy"><div class="over"><span class="vmark ${it.type}"></span><h4>${esc(it.name)}</h4><div class="p">${from}</div></div></button>`;
+    return `<button class="sp-card" data-i="${it.id}"><img src="${it.img}" alt="" loading="lazy"><div class="over"><span class="vmark ${it.type}"></span><h4>${esc(it.name)}</h4><div class="p">${from}</div></div></button>`;
   }).join("");
   const spRow = document.getElementById("specialsRow");
   spRow.addEventListener("click", e => { const b = e.target.closest(".sp-card"); if (b) openDish(+b.dataset.i); });
@@ -619,7 +701,7 @@
     const sparks = Array.from({ length: 14 }, (_, k) => { const a = (k / 14) * Math.PI * 2, d = 120 + (k % 3) * 40; return `<i class="spark" style="left:50%;top:52%;--dx:${Math.cos(a) * d}px;--dy:${Math.sin(a) * d}px;animation-delay:${0.7 + (k % 4) * 0.03}s"></i>`; }).join("");
     modal.innerHTML = `<div class="sheet" role="dialog" aria-modal="true" aria-label="${esc(it.name)}" style="--dish-bg:${t.bg};--dish-ink:${t.ink};--dish-accent:${t.accent}">
       <button class="close-x" id="mClose" aria-label="Close">✕</button>
-      <div class="dish-stage"><div class="rays"></div><div class="glow"></div><div class="dish-plate"><img src="${IMG(it.img)}" alt="${esc(it.name)}"></div><i class="steam s1"></i><i class="steam s2"></i><i class="steam s3"></i>${sparks}</div>
+      <div class="dish-stage"><div class="rays"></div><div class="glow"></div><div class="dish-plate"><img src="${it.img}" alt="${esc(it.name)}"></div><i class="steam s1"></i><i class="steam s2"></i><i class="steam s3"></i>${sparks}</div>
       <div class="dish-info">
         <span class="cat">${esc(it.cat.name)} · ${esc(it.sec.title)}</span>
         <div style="display:flex;gap:8px;align-items:center"><span class="vmark ${it.type}"></span><span class="note-small">${it.type === "v" ? "Vegetarian" : it.type === "e" ? "Contains egg" : "Non-vegetarian"} · Halal</span>${it.star ? '<span class="star">★ Chef\'s special</span>' : ""}</div>
@@ -643,6 +725,19 @@
     else if (e.target.closest("#mBook")) closeDish();
   });
   document.addEventListener("keydown", e => { if (modal.hidden) return; if (e.key === "Escape") closeDish(); if (e.key === "ArrowRight") step(1); if (e.key === "ArrowLeft") step(-1); });
+
+  // ---------- photo credits ----------
+  const creditsEl = document.getElementById("credits");
+  document.getElementById("creditsBtn").addEventListener("click", () => {
+    if (!creditsEl.dataset.built && typeof PHOTO_CREDITS === "object") {
+      document.getElementById("creditsList").innerHTML = PHOTO_CREDITS.map(c => `<li><b>${esc(c.dish)}</b>: ${esc(c.author)}, <a href="${esc(c.page)}" target="_blank" rel="noopener">${esc(c.license)}</a></li>`).join("");
+      creditsEl.dataset.built = "1";
+    }
+    creditsEl.hidden = false; document.body.style.overflow = "hidden";
+  });
+  const closeCredits = () => { creditsEl.hidden = true; document.body.style.overflow = ""; };
+  creditsEl.addEventListener("click", e => { if (e.target === creditsEl || e.target.closest("#creditsClose")) closeCredits(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && !creditsEl.hidden) closeCredits(); });
 
   // ---------- booking ----------
   const SLOTS = ["12:30", "1:30", "2:30", "7:00", "7:30", "8:00", "8:30", "9:00", "9:30", "10:00"];
